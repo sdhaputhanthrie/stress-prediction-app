@@ -53,15 +53,25 @@ class _DashboardViewState extends State<DashboardView> {
                           borderRadius: BorderRadius.circular(10),
                         ),
 
-                        // child: Image.asset(
-                        //   "assets/img/camera.png",
-                        //   width: 20,
-                        //   height: 20,
-                        // ),
-                        child: Icon(
-                          Icons.camera_alt_outlined,
-                          color: Colors.black,
-                          size: 30.0,
+                       
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.camera_alt_outlined,
+                              color: Colors.black,
+                              size: 50.0,
+                            ),
+                            const SizedBox(height: 10),
+                            Text(
+                              "Scan Face",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -83,10 +93,24 @@ class _DashboardViewState extends State<DashboardView> {
                           borderRadius: BorderRadius.circular(10),
                         ),
 
-                        child: Image.asset(
-                          "assets/img/facebook.png",
-                          width: 45,
-                          height: 45,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.camera_alt_outlined,
+                              color: Colors.black,
+                              size: 50.0,
+                            ),
+                            const SizedBox(height: 10),
+                            Text(
+                              "Scan Face",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -112,10 +136,24 @@ class _DashboardViewState extends State<DashboardView> {
                           borderRadius: BorderRadius.circular(10),
                         ),
 
-                        child: Image.asset(
-                          "assets/img/google.png",
-                          width: 20,
-                          height: 20,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.camera_alt_outlined,
+                              color: Colors.black,
+                              size: 50.0,
+                            ),
+                            const SizedBox(height: 10),
+                            Text(
+                              "Scan Face",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -137,15 +175,111 @@ class _DashboardViewState extends State<DashboardView> {
                           borderRadius: BorderRadius.circular(10),
                         ),
 
-                        child: Image.asset(
-                          "assets/img/facebook.png",
-                          width: 45,
-                          height: 45,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.camera_alt_outlined,
+                              color: Colors.black,
+                              size: 50.0,
+                            ),
+                            const SizedBox(height: 10),
+                            Text(
+                              "Scan Face",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
                   ],
                 ),
+
+                const SizedBox(height: 40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        width: 170,
+                        height: 170,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: TColor.white,
+                          border: Border.all(
+                            width: 1,
+                            color: TColor.gray.withOpacity(0.5),
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.camera_alt_outlined,
+                              color: Colors.black,
+                              size: 50.0,
+                            ),
+                            const SizedBox(height: 10),
+                            Text(
+                              "Scan Face",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 20),
+
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        width: 170,
+                        height: 170,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: TColor.white,
+                          border: Border.all(
+                            width: 1,
+                            color: TColor.gray.withOpacity(0.5),
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.camera_alt_outlined,
+                              color: Colors.black,
+                              size: 50.0,
+                            ),
+                            const SizedBox(height: 10),
+                            Text(
+                              "Scan Face",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
                 const SizedBox(height: 50),
               ],
             ),
