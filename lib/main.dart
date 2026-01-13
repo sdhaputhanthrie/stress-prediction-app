@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stress_predition_app/common/colo_extension.dart';
 import 'package:stress_predition_app/view/login/login_view.dart';
-import 'package:stress_predition_app/view/login/profile_view.dart';
-import 'package:stress_predition_app/view/login/dashboard_view.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Stress Predition ',
+      title: 'Stress Predition',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
@@ -33,8 +32,8 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
+        textTheme: GoogleFonts.poppinsTextTheme(),
         primaryColor: TColor.primaryColor1,
-        fontFamily: "Poppins"
       ),
       home: const LoginView(),
     );

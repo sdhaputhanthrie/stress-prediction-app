@@ -53,10 +53,15 @@ class _DashboardViewState extends State<DashboardView> {
                           borderRadius: BorderRadius.circular(10),
                         ),
 
-                        child: Image.asset(
-                          "assets/img/camera.png",
-                          width: 20,
-                          height: 20,
+                        // child: Image.asset(
+                        //   "assets/img/camera.png",
+                        //   width: 20,
+                        //   height: 20,
+                        // ),
+                        child: Icon(
+                          Icons.camera_alt_outlined,
+                          color: Colors.black,
+                          size: 30.0,
                         ),
                       ),
                     ),
@@ -141,8 +146,7 @@ class _DashboardViewState extends State<DashboardView> {
                     ),
                   ],
                 ),
-                 const SizedBox(height: 50),
-                
+                const SizedBox(height: 50),
               ],
             ),
           ),

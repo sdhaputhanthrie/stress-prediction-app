@@ -178,10 +178,10 @@ class _LoginViewState extends State<LoginView> {
                           borderRadius: BorderRadius.circular(10),
                         ),
 
-                        child: Image.asset(
-                          "assets/img/facebook.png",
-                          width: 45,
-                          height: 45,
+                        child:  Icon(
+                          Icons.facebook_sharp,
+                          color: Colors.blue,
+                          size: 30.0,
                         ),
                       ),
                     ),
