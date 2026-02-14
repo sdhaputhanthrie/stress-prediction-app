@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stress_predition_app/common/colo_extension.dart';
 import 'package:stress_predition_app/view/login/login_view.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:stress_predition_app/view/login/onboarding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.poppinsTextTheme(),
         primaryColor: TColor.primaryColor1,
       ),
-      home: const LoginView(),
+      home: const Onboarding(),
     );
   }
 }
