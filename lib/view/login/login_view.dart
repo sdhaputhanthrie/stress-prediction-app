@@ -18,209 +18,221 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade100,
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Container(
-            height: media.height,
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xFF73D3E7), // light blue
+              Color(0X82EDD4), // soft sky
+              Color(0xFFA6F5E2),
+              Color.from(alpha: 0.892, red: 0.027, green: 0.867, blue: 0.671),
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: SingleChildScrollView(
+          child: SafeArea(
+            child: Container(
+              height: media.height,
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
 
-              children: [
-                SizedBox(height: media.height * 0.05),
-                Text(
-                  "Hey there",
-                  style: TextStyle(color: TColor.gray, fontSize: 20),
-                ),
-                Text(
-                  "Welcome Back",
-                  style: TextStyle(
-                    color: TColor.black,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w700,
+                children: [
+                  SizedBox(height: media.height * 0.05),
+                  Text(
+                    "Hey there",
+                    style: TextStyle(color: TColor.gray, fontSize: 20),
                   ),
-                ),
-
-              SizedBox(height: media.height * 0.03),
-                Container(
-                  width: 200,
-                  height: 250,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/img/loginpage.png'),
-                      fit: BoxFit.cover,
+                  Text(
+                    "Welcome Back",
+                    style: TextStyle(
+                      color: TColor.black,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
-                ),
 
-                SizedBox(height: media.height * 0.03),
-                const RoundTextfield(
-                  hitText: "Email",
-                  icon: "assets/img/mail.png",
-                  keyboardType: TextInputType.emailAddress,
-                ),
-
-                SizedBox(height: media.height * 0.01),
-                RoundTextfield(
-                  hitText: "Password",
-                  icon: "assets/img/lock.png",
-                  obscureText: true,
-                  rightIcon: TextButton(
-                    onPressed: () {},
-                    child: Container(
-                      alignment: Alignment.center,
-                      width: 15,
-                      height: 15,
-                      child: Image.asset(
-                        "assets/img/show_password.png",
-                        width: 20,
-                        height: 20,
-                        fit: BoxFit.contain,
-                        color: TColor.gray,
+                  SizedBox(height: media.height * 0.03),
+                  Container(
+                    width: 200,
+                    height: 250,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/img/loginpage.png'),
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
-                ),
 
-                SizedBox(height: media.height * 0.02),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Forget your password?",
-                      style: TextStyle(
-                        color: TColor.gray,
-                        fontSize: 12,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                  ],
-                ),
+                  SizedBox(height: media.height * 0.03),
+                  const RoundTextfield(
+                    hitText: "Email",
+                    icon: "assets/img/mail.png",
+                    keyboardType: TextInputType.emailAddress,
+                  ),
 
-                const Spacer(),
-                RoundButton(
-                  title: "Login",
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const DashboardView(),
-                      ),
-                    );
-                  },
-                ),
-
-                SizedBox(height: media.height * 0.03),
-
-                Row(
-                  //crossAxisAlignment: CrossAxisAlignment,
-                  children: [
-                    Expanded(child: Container(height: 1, color: TColor.gray)),
-
-                    Text(
-                      "Or",
-                      style: TextStyle(color: TColor.black, fontSize: 12),
-                    ),
-
-                    Expanded(
+                  SizedBox(height: media.height * 0.01),
+                  RoundTextfield(
+                    hitText: "Password",
+                    icon: "assets/img/lock.png",
+                    obscureText: true,
+                    rightIcon: TextButton(
+                      onPressed: () {},
                       child: Container(
-                        width: double.maxFinite,
-                        height: 1,
-                        color: TColor.gray,
-                      ),
-                    ),
-                  ],
-                ),
-               const SizedBox(height: 40),
-
-                
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        width: 50,
-                        height: 50,
                         alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: TColor.white,
-                          border: Border.all(
-                            width: 1,
-                            color: TColor.gray.withOpacity(0.5),
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-
+                        width: 15,
+                        height: 15,
                         child: Image.asset(
-                          "assets/img/google.png",
+                          "assets/img/show_password.png",
                           width: 20,
                           height: 20,
+                          fit: BoxFit.contain,
+                          color: TColor.gray,
                         ),
                       ),
                     ),
+                  ),
 
-    const SizedBox(width: 40),
-
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        width: 50,
-                        height: 50,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: TColor.white,
-                          border: Border.all(
-                            width: 1,
-                            color: TColor.gray.withOpacity(0.5),
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-
-                        child:  Icon(
-                          Icons.facebook_sharp,
-                          color: Colors.blue,
-                          size: 30.0,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-
-                SizedBox(height: media.height * 0.03),
-
-                TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-
+                  SizedBox(height: media.height * 0.02),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Don't have accout yet?",
+                        "Forget your password?",
                         style: TextStyle(
                           color: TColor.gray,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-
-                      Text(
-                        " Register",
-                        style: TextStyle(
-                          color: TColor.black,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
+                          fontSize: 12,
+                          decoration: TextDecoration.underline,
                         ),
                       ),
                     ],
                   ),
-                ),
 
-                SizedBox(height: media.height * 0.07),
-              ],
+                  const Spacer(),
+                  RoundButton(
+                    title: "Login",
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const DashboardView(),
+                        ),
+                      );
+                    },
+                  ),
+
+                  SizedBox(height: media.height * 0.03),
+
+                  Row(
+                    //crossAxisAlignment: CrossAxisAlignment,
+                    children: [
+                      Expanded(child: Container(height: 1, color: TColor.gray)),
+
+                      Text(
+                        "Or",
+                        style: TextStyle(color: TColor.black, fontSize: 12),
+                      ),
+
+                      Expanded(
+                        child: Container(
+                          width: double.maxFinite,
+                          height: 1,
+                          color: TColor.gray,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 40),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          width: 50,
+                          height: 50,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: TColor.white,
+                            border: Border.all(
+                              width: 1,
+                              color: TColor.gray.withOpacity(0.5),
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+
+                          child: Image.asset(
+                            "assets/img/google.png",
+                            width: 20,
+                            height: 20,
+                          ),
+                        ),
+                      ),
+
+                      const SizedBox(width: 40),
+
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          width: 50,
+                          height: 50,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: TColor.white,
+                            border: Border.all(
+                              width: 1,
+                              color: TColor.gray.withOpacity(0.5),
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+
+                          child: Icon(
+                            Icons.facebook_sharp,
+                            color: Colors.blue,
+                            size: 30.0,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  SizedBox(height: media.height * 0.03),
+
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+
+                      children: [
+                        Text(
+                          "Don't have accout yet?",
+                          style: TextStyle(
+                            color: TColor.gray,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+
+                        Text(
+                          " Register",
+                          style: TextStyle(
+                            color: TColor.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  SizedBox(height: media.height * 0.07),
+                ],
+              ),
             ),
           ),
         ),
