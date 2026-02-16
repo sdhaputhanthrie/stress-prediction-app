@@ -4,6 +4,7 @@ import 'package:stress_predition_app/common_widget/round_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:stress_predition_app/view/login/dashboard_view.dart';
 import 'package:stress_predition_app/view/login/profile_view.dart';
+import 'package:stress_predition_app/view/login/signup_view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -203,7 +204,12 @@ class _LoginViewState extends State<LoginView> {
 
                   TextButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SignupView(),
+                        ),
+                      );
                     },
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
