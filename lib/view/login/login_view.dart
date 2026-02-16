@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:stress_predition_app/view/login/dashboard_view.dart';
 import 'package:stress_predition_app/view/login/profile_view.dart';
 import 'package:stress_predition_app/view/login/signup_view.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -15,6 +16,8 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   bool isCheck = false;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
@@ -151,7 +154,25 @@ class _LoginViewState extends State<LoginView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () async {
+                          try {
+                            final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+                            if (googleUser != null) {
+                              print('Google user signed in: ${googleUser.email}');
+                              // Navigate to dashboard after successful login
+                              if (mounted) {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const DashboardView(),
+                                  ),
+                                );
+                              }
+                            }
+                          } catch (error) {
+                            print('Google Sign In Error: $error');
+                          }
+                        },
                         child: Container(
                           width: 50,
                           height: 50,
@@ -176,7 +197,10 @@ class _LoginViewState extends State<LoginView> {
                       const SizedBox(width: 40),
 
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          // Add Facebook Sign In logic here
+                          print('Facebook login tapped');
+                        },
                         child: Container(
                           width: 50,
                           height: 50,
