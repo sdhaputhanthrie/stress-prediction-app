@@ -3,6 +3,7 @@ import 'package:stress_predition_app/common/colo_extension.dart';
 import 'package:stress_predition_app/common_widget/round_button.dart';
 import 'package:stress_predition_app/common_widget/round_textfield.dart';
 import 'package:stress_predition_app/view/login/login_view.dart';
+import 'package:stress_predition_app/view/login/signup_view.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -80,7 +81,7 @@ class _OnboardingState extends State<Onboarding> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const LoginView(),
+                          builder: (context) => const SignupView(),
                         ),
                       );
                     },
