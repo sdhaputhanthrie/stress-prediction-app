@@ -25,7 +25,6 @@ class _OnboardingState extends State<Onboarding> {
               Color(0X82EDD4), // soft sky
               Color.from(alpha: 1, red: 0.306, green: 0.965, blue: 0.812),
               Color(0X82EDD4),
-
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
