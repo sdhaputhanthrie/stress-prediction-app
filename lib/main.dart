@@ -1,10 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:stress_predition_app/common/colo_extension.dart';
 import 'package:stress_predition_app/view/login/login_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stress_predition_app/view/login/onboarding.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp();
+  print("Firebase connected successfully");
+  
   runApp(const MyApp());
 }
 
