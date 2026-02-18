@@ -6,6 +6,9 @@ import 'package:stress_predition_app/view/login/dashboard_view.dart';
 import 'package:stress_predition_app/view/login/profile_view.dart';
 import 'package:stress_predition_app/view/login/signup_view.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -130,7 +133,7 @@ class _LoginViewState extends State<LoginView> {
                   SizedBox(height: media.height * 0.03),
 
                   Row(
-                    //crossAxisAlignment: CrossAxisAlignment,
+                    
                     children: [
                       Expanded(child: Container(height: 1, color: TColor.gray)),
 
@@ -159,7 +162,7 @@ class _LoginViewState extends State<LoginView> {
                             final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
                             if (googleUser != null) {
                               print('Google user signed in: ${googleUser.email}');
-                              // Navigate to dashboard after successful login
+                           
                               if (mounted) {
                                 Navigator.push(
                                   context,
@@ -198,7 +201,7 @@ class _LoginViewState extends State<LoginView> {
 
                       GestureDetector(
                         onTap: () {
-                          // Add Facebook Sign In logic here
+                          
                           print('Facebook login tapped');
                         },
                         child: Container(
