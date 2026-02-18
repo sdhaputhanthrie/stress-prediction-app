@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1094319538730",
+    "project_id": "stresspredication",
+    "storage_bucket": "stresspredication.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094319538730:android:0899a73e20943a3de1f953",
+        "android_client_info": {
+          "package_name": "com.example.stress_predition_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjxFWPFYZ1K5_ghIHXrnQ0pW_DOCHTcWk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
