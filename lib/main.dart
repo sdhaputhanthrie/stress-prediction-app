@@ -5,6 +5,7 @@ import 'package:stress_predition_app/view/login/login_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stress_predition_app/view/login/onboarding.dart';
 
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
