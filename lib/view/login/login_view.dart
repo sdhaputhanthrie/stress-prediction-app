@@ -7,8 +7,7 @@ import 'package:stress_predition_app/view/login/profile_view.dart';
 import 'package:stress_predition_app/view/login/signup_view.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_core/firebase_core.dart';
-
-
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -20,6 +19,30 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   bool isCheck = false;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  Future<void> loginUser() async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+            email: emailController.text.trim(),
+            password: passwordController.text.trim(),
+          );
+
+      // If login succeeds, navigate to Dashboard
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const DashboardView()),
+        );
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text("Login failed: ${e.toString()}")));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +97,8 @@ class _LoginViewState extends State<LoginView> {
                   ),
 
                   SizedBox(height: media.height * 0.03),
-                  const RoundTextfield(
+                  RoundTextfield(
+                    controller: emailController,
                     hitText: "Email",
                     icon: "assets/img/mail.png",
                     keyboardType: TextInputType.emailAddress,
@@ -82,6 +106,7 @@ class _LoginViewState extends State<LoginView> {
 
                   SizedBox(height: media.height * 0.01),
                   RoundTextfield(
+                    controller: passwordController,
                     hitText: "Password",
                     icon: "assets/img/lock.png",
                     obscureText: true,
@@ -121,19 +146,13 @@ class _LoginViewState extends State<LoginView> {
                   RoundButton(
                     title: "Login",
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const DashboardView(),
-                        ),
-                      );
+                      loginUser();
                     },
                   ),
 
                   SizedBox(height: media.height * 0.03),
 
                   Row(
-                    
                     children: [
                       Expanded(child: Container(height: 1, color: TColor.gray)),
 
@@ -159,10 +178,13 @@ class _LoginViewState extends State<LoginView> {
                       GestureDetector(
                         onTap: () async {
                           try {
-                            final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+                            final GoogleSignInAccount? googleUser =
+                                await _googleSignIn.signIn();
                             if (googleUser != null) {
-                              print('Google user signed in: ${googleUser.email}');
-                           
+                              print(
+                                'Google user signed in: ${googleUser.email}',
+                              );
+
                               if (mounted) {
                                 Navigator.push(
                                   context,
@@ -201,7 +223,6 @@ class _LoginViewState extends State<LoginView> {
 
                       GestureDetector(
                         onTap: () {
-                          
                           print('Facebook login tapped');
                         },
                         child: Container(

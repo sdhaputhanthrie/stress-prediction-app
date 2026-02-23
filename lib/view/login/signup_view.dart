@@ -15,13 +15,13 @@ class SignupView extends StatefulWidget {
 }
 
 class _SignupViewState extends State<SignupView> {
-
   final _formKey = GlobalKey<FormState>();
 
   final TextEditingController fullNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
   final TextEditingController ageController = TextEditingController();
   final TextEditingController genderController = TextEditingController();
   final TextEditingController contactNameController = TextEditingController();
@@ -32,20 +32,19 @@ class _SignupViewState extends State<SignupView> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   Future<void> signUpUser() async {
-
     if (passwordController.text != confirmPasswordController.text) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Passwords do not match")),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text("Passwords do not match")));
       return;
     }
 
     try {
-      UserCredential userCredential =
-          await _auth.createUserWithEmailAndPassword(
-        email: emailController.text.trim(),
-        password: passwordController.text.trim(),
-      );
+      UserCredential userCredential = await _auth
+          .createUserWithEmailAndPassword(
+            email: emailController.text.trim(),
+            password: passwordController.text.trim(),
+          );
 
       String uid = userCredential.user!.uid;
 
@@ -58,25 +57,22 @@ class _SignupViewState extends State<SignupView> {
         "emergencyContact": {
           "contactName": contactNameController.text.trim(),
           "contactPhone": contactPhoneController.text.trim(),
-         
-        }
+        },
       });
 
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const DashboardView()),
       );
-
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Error: ${e.toString()}")),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text("Error: ${e.toString()}")));
     }
   }
 
   @override
   Widget build(BuildContext context) {
-
     var media = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -99,7 +95,6 @@ class _SignupViewState extends State<SignupView> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-
                 SizedBox(height: media.height * 0.03),
 
                 Text(
@@ -113,12 +108,12 @@ class _SignupViewState extends State<SignupView> {
 
                 SizedBox(height: media.height * 0.03),
 
-               
-
                 const Align(
                   alignment: Alignment.centerLeft,
-                  child: Text("Personal Information",
-                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  child: Text(
+                    "Personal Information",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 ),
 
                 const SizedBox(height: 10),
@@ -174,12 +169,12 @@ class _SignupViewState extends State<SignupView> {
 
                 SizedBox(height: media.height * 0.03),
 
-              
-
                 const Align(
                   alignment: Alignment.centerLeft,
-                  child: Text("Emergency Contact",
-                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  child: Text(
+                    "Emergency Contact",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 ),
 
                 const SizedBox(height: 10),
@@ -201,22 +196,14 @@ class _SignupViewState extends State<SignupView> {
 
                 const SizedBox(height: 12),
 
-                
-
                 SizedBox(height: media.height * 0.04),
 
                 RoundButton(
                   title: "Sign Up",
-                onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const LoginView(),
-                        ),
-                      );
-                    },
-                  ),
-
+                  onPressed: () {
+                    signUpUser();
+                  },
+                ),
 
                 SizedBox(height: media.height * 0.05),
               ],
