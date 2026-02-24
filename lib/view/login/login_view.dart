@@ -30,7 +30,7 @@ class _LoginViewState extends State<LoginView> {
             password: passwordController.text.trim(),
           );
 
-      // If login succeeds, navigate to Dashboard
+      
       if (mounted) {
         Navigator.pushReplacement(
           context,
@@ -38,9 +38,11 @@ class _LoginViewState extends State<LoginView> {
         );
       }
     } catch (e) {
+
+      String msg = e.toString().replaceAll(RegExp(r"\[.*?\]"), "");
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(SnackBar(content: Text("Login failed: ${e.toString()}")));
+      ).showSnackBar(SnackBar(content: Text("Login failed: $msg")));
     }
   }
 
