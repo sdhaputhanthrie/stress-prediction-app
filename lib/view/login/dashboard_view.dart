@@ -4,7 +4,9 @@ import 'package:stress_predition_app/common_widget/round_textfield.dart';
 import 'package:stress_predition_app/view/login/login_view.dart';
 import 'package:stress_predition_app/view/login/scan_face_view.dart';
 import 'package:flutter/material.dart';
-import 'package:stress_predition_app/view/login/profile_view.dart';
+import 'package:stress_predition_app/view/login/account_view.dart';
+import 'package:stress_predition_app/view/login/history_view.dart';
+
 
 class DashboardView extends StatefulWidget {
   const DashboardView({super.key});
@@ -102,12 +104,7 @@ class _DashboardViewState extends State<DashboardView> {
 
                       GestureDetector(
                          onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ProfileView(),
-                            ),
-                          );
+                         
                         },
                         child: Container(
                           width: 170,
@@ -190,7 +187,14 @@ class _DashboardViewState extends State<DashboardView> {
                       const SizedBox(width: 20),
 
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HistoryView(),
+                            ),
+                          );
+                        },
                         child: Container(
                           width: 170,
                           height: 170,
@@ -225,6 +229,7 @@ class _DashboardViewState extends State<DashboardView> {
                           ),
                         ),
                       ),
+                      
                     ],
                   ),
 
@@ -271,7 +276,14 @@ class _DashboardViewState extends State<DashboardView> {
                       const SizedBox(width: 20),
 
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AccountView(),
+                            ),
+                          );
+                        },
                         child: Container(
                           width: 170,
                           height: 170,
