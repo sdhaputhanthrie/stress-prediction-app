@@ -26,7 +26,11 @@ android {
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         // Firebase plugins require minSdk 23 or higher. Override the Flutter default.
+<<<<<<< HEAD
         minSdk = flutter.minSdkVersion
+=======
+        minSdk = 23
+>>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName

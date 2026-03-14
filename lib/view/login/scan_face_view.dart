@@ -16,7 +16,11 @@ class _ScanFaceViewState extends State<ScanFaceView> {
           gradient: LinearGradient(
             colors: [
               Color(0xFF73D3E7), // light blue
+<<<<<<< HEAD
               Color(0X0082edd4), // soft sky
+=======
+              Color(0X82EDD4), // soft sky
+>>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
               Color(0xFFA6F5E2),
               Color.from(alpha: 0.892, red: 0.027, green: 0.867, blue: 0.671),
             ],
@@ -24,7 +28,14 @@ class _ScanFaceViewState extends State<ScanFaceView> {
             end: Alignment.bottomCenter,
           ),
         ),
+<<<<<<< HEAD
       ),
     );
   }
 }
+=======
+      )
+    );
+  }
+}
+>>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
