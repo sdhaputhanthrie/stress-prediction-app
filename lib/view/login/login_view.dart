@@ -3,7 +3,7 @@ import 'package:stress_predition_app/common_widget/round_button.dart';
 import 'package:stress_predition_app/common_widget/round_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:stress_predition_app/view/login/dashboard_view.dart';
-import 'package:stress_predition_app/view/login/profile_view.dart';
+import 'package:stress_predition_app/view/login/account_view.dart';
 import 'package:stress_predition_app/view/login/signup_view.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_core/firebase_core.dart';
