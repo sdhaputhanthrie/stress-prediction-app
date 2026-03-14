@@ -17,6 +17,16 @@ class _OnboardingState extends State<Onboarding> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+<<<<<<< HEAD
+        height: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xFF73D3E7), // light blue
+              Color(0X0082edd4), // soft sky
+              Color.from(alpha: 1, red: 0.306, green: 0.965, blue: 0.812),
+              Color(0X0082edd4),
+=======
           height: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -25,6 +35,7 @@ class _OnboardingState extends State<Onboarding> {
               Color(0X82EDD4), // soft sky
               Color.from(alpha: 1, red: 0.306, green: 0.965, blue: 0.812),
               Color(0X82EDD4),
+>>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -32,7 +43,11 @@ class _OnboardingState extends State<Onboarding> {
         ),
         child: SingleChildScrollView(
           child: SafeArea(
+<<<<<<< HEAD
+            child: Container(
+=======
           child: Container(
+>>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
@@ -47,7 +62,11 @@ class _OnboardingState extends State<Onboarding> {
                       ),
                     ),
                   ),
+<<<<<<< HEAD
+
+=======
                   
+>>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
                   const SizedBox(height: 40),
                   Center(
                     child: Text(
@@ -57,11 +76,18 @@ class _OnboardingState extends State<Onboarding> {
                         fontSize: 40,
                         fontWeight: FontWeight.w700,
                       ),
+<<<<<<< HEAD
+                    ),
+                  ),
+
+                  const SizedBox(height: 50),
+=======
                     
                     ),
                   ),
                   
                    const SizedBox(height: 50),
+>>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
                   RoundButton(
                     title: "Login",
                     onPressed: () {
@@ -73,7 +99,11 @@ class _OnboardingState extends State<Onboarding> {
                       );
                     },
                   ),
+<<<<<<< HEAD
+                  const SizedBox(height: 50),
+=======
                     const SizedBox(height: 50),
+>>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
                   RoundButton(
                     title: "Sign Up",
                     onPressed: () {
@@ -85,14 +115,24 @@ class _OnboardingState extends State<Onboarding> {
                       );
                     },
                   ),
+<<<<<<< HEAD
+                ],
+              ),
+            ),
+=======
                   
 
                 ],
               ),
           ),
+>>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
           ),
         ),
       ),
     );
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7

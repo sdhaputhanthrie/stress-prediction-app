@@ -5,6 +5,11 @@ import 'package:stress_predition_app/view/login/login_view.dart';
 import 'package:stress_predition_app/view/login/scan_face_view.dart';
 import 'package:flutter/material.dart';
 import 'package:stress_predition_app/view/login/profile_view.dart';
+<<<<<<< HEAD
+import 'package:stress_predition_app/view/login/history_view.dart';
+import 'package:stress_predition_app/view/login/account_view.dart';
+=======
+>>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
 
 class DashboardView extends StatefulWidget {
   const DashboardView({super.key});
@@ -23,10 +28,16 @@ class _DashboardViewState extends State<DashboardView> {
           gradient: LinearGradient(
             colors: [
               Color(0xFF73D3E7), // light blue
+<<<<<<< HEAD
+              Color(0X0082edd4), // soft sky
+              Color(0xFFA6F5E2),
+              Color(0X0082edd4),
+=======
               Color(0X82EDD4), // soft sky
               Color(0xFFA6F5E2),
               Color(0X82EDD4),
              
+>>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -101,7 +112,11 @@ class _DashboardViewState extends State<DashboardView> {
                       const SizedBox(width: 20),
 
                       GestureDetector(
+<<<<<<< HEAD
+                        onTap: () {
+=======
                          onTap: () {
+>>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -190,7 +205,19 @@ class _DashboardViewState extends State<DashboardView> {
                       const SizedBox(width: 20),
 
                       GestureDetector(
+<<<<<<< HEAD
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HistoryView(),
+                            ),
+                          );
+                        },
+
+=======
                         onTap: () {},
+>>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
                         child: Container(
                           width: 170,
                           height: 170,
@@ -271,7 +298,18 @@ class _DashboardViewState extends State<DashboardView> {
                       const SizedBox(width: 20),
 
                       GestureDetector(
+<<<<<<< HEAD
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const AccountView(),
+                            ),
+                          );
+                        },
+=======
                         onTap: () {},
+>>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
                         child: Container(
                           width: 170,
                           height: 170,
