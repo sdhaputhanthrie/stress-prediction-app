@@ -30,10 +30,7 @@ class _LoginViewState extends State<LoginView> {
             password: passwordController.text.trim(),
           );
 
-<<<<<<< HEAD
-=======
       
->>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
       if (mounted) {
         Navigator.pushReplacement(
           context,
@@ -41,10 +38,7 @@ class _LoginViewState extends State<LoginView> {
         );
       }
     } catch (e) {
-<<<<<<< HEAD
-=======
 
->>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
       String msg = e.toString().replaceAll(RegExp(r"\[.*?\]"), "");
       ScaffoldMessenger.of(
         context,
@@ -61,11 +55,7 @@ class _LoginViewState extends State<LoginView> {
           gradient: LinearGradient(
             colors: [
               Color(0xFF73D3E7), // light blue
-<<<<<<< HEAD
-              Color(0X0082edd4), // soft sky
-=======
               Color(0X82EDD4), // soft sky
->>>>>>> 7133660912f9050fe9af0ae4cac2c66219ca30e7
               Color(0xFFA6F5E2),
               Color.from(alpha: 0.892, red: 0.027, green: 0.867, blue: 0.671),
             ],
