@@ -4,9 +4,7 @@ import 'package:stress_predition_app/common_widget/round_textfield.dart';
 import 'package:stress_predition_app/view/login/login_view.dart';
 import 'package:stress_predition_app/view/login/scan_face_view.dart';
 import 'package:flutter/material.dart';
-import 'package:stress_predition_app/view/login/account_view.dart';
-import 'package:stress_predition_app/view/login/history_view.dart';
-
+import 'package:stress_predition_app/view/login/emergency_view.dart';
 
 class DashboardView extends StatefulWidget {
   const DashboardView({super.key});
@@ -28,7 +26,6 @@ class _DashboardViewState extends State<DashboardView> {
               Color(0X82EDD4), // soft sky
               Color(0xFFA6F5E2),
               Color(0X82EDD4),
-             
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -56,6 +53,7 @@ class _DashboardViewState extends State<DashboardView> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      // Scan Face Card
                       GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -77,7 +75,6 @@ class _DashboardViewState extends State<DashboardView> {
                             ),
                             borderRadius: BorderRadius.circular(10),
                           ),
-
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -102,10 +99,9 @@ class _DashboardViewState extends State<DashboardView> {
 
                       const SizedBox(width: 20),
 
+                      // Stress Level Card
                       GestureDetector(
-                         onTap: () {
-                         
-                        },
+                        onTap: () {},
                         child: Container(
                           width: 170,
                           height: 170,
@@ -118,7 +114,6 @@ class _DashboardViewState extends State<DashboardView> {
                             ),
                             borderRadius: BorderRadius.circular(10),
                           ),
-
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -147,6 +142,7 @@ class _DashboardViewState extends State<DashboardView> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      // First-Aid Card
                       GestureDetector(
                         onTap: () {},
                         child: Container(
@@ -161,7 +157,6 @@ class _DashboardViewState extends State<DashboardView> {
                             ),
                             borderRadius: BorderRadius.circular(10),
                           ),
-
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -186,15 +181,9 @@ class _DashboardViewState extends State<DashboardView> {
 
                       const SizedBox(width: 20),
 
+                      // History Card
                       GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => HistoryView(),
-                            ),
-                          );
-                        },
+                        onTap: () {},
                         child: Container(
                           width: 170,
                           height: 170,
@@ -207,7 +196,6 @@ class _DashboardViewState extends State<DashboardView> {
                             ),
                             borderRadius: BorderRadius.circular(10),
                           ),
-
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -229,7 +217,6 @@ class _DashboardViewState extends State<DashboardView> {
                           ),
                         ),
                       ),
-                      
                     ],
                   ),
 
@@ -237,8 +224,16 @@ class _DashboardViewState extends State<DashboardView> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      // Emergency SOS Card
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const EmergencyView(),
+                            ),
+                          );
+                        },
                         child: Container(
                           width: 170,
                           height: 170,
@@ -251,7 +246,6 @@ class _DashboardViewState extends State<DashboardView> {
                             ),
                             borderRadius: BorderRadius.circular(10),
                           ),
-
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -273,17 +267,12 @@ class _DashboardViewState extends State<DashboardView> {
                           ),
                         ),
                       ),
+
                       const SizedBox(width: 20),
 
+                      // Account Card
                       GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => AccountView(),
-                            ),
-                          );
-                        },
+                        onTap: () {},
                         child: Container(
                           width: 170,
                           height: 170,
@@ -296,7 +285,6 @@ class _DashboardViewState extends State<DashboardView> {
                             ),
                             borderRadius: BorderRadius.circular(10),
                           ),
-
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
