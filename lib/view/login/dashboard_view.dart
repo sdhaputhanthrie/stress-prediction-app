@@ -6,6 +6,7 @@ import 'package:stress_predition_app/view/login/login_view.dart';
 import 'package:stress_predition_app/view/login/scan_face_view.dart';
 import 'package:flutter/material.dart';
 import 'package:stress_predition_app/view/login/emergency_view.dart';
+import 'package:stress_predition_app/view/login/history_view.dart';
 import 'package:stress_predition_app/view/login/account_view.dart';
 
 class DashboardView extends StatefulWidget {
@@ -53,48 +54,48 @@ class _DashboardViewState extends State<DashboardView> {
 
                   const SizedBox(height: 60),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       // Scan Face Card
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ScanFaceView(),
-                            ),
-                          );
-                        },
-                        child: Container(
-                          width: 170,
-                          height: 170,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: TColor.white,
-                            border: Border.all(
-                              width: 1,
-                              color: TColor.gray.withOpacity(0.5),
-                            ),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.camera_alt_outlined,
-                                color: Colors.black,
-                                size: 50.0,
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ScanFaceView(),
                               ),
-                              const SizedBox(height: 10),
-                              Text(
-                                "Scan Face",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
+                            );
+                          },
+                          child: Container(
+                            height: 170,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: TColor.white,
+                              border: Border.all(
+                                width: 1,
+                                color: TColor.gray.withOpacity(0.5),
+                              ),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.camera_alt_outlined,
                                   color: Colors.black,
+                                  size: 50.0,
                                 ),
-                              ),
-                            ],
+                                const SizedBox(height: 10),
+                                Text(
+                                  "Scan Face",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -102,90 +103,82 @@ class _DashboardViewState extends State<DashboardView> {
                       const SizedBox(width: 20),
 
                       // Stress Level Card
-                      GestureDetector(
-                        onTap: () {
-                          
-                        },
-                        child: Container(
-                          width: 170,
-                          height: 170,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: TColor.white,
-                            border: Border.all(
-                              width: 1,
-                              color: TColor.gray.withOpacity(0.5),
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            height: 170,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: TColor.white,
+                              border: Border.all(
+                                width: 1,
+                                color: TColor.gray.withOpacity(0.5),
+                              ),
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.psychology,
-                                color: Colors.black,
-                                size: 60.0,
-                              ),
-                              const SizedBox(height: 10),
-                              Text(
-                                "Stress Level",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.psychology,
                                   color: Colors.black,
+                                  size: 60.0,
                                 ),
-                              ),
-                            ],
+                                const SizedBox(height: 10),
+                                Text(
+                                  "Stress Level",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ],
                   ),
 
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       // First-Aid Card
-                      GestureDetector(
-                        onTap: () {
-  Navigator.push(
-    context,
-    MaterialPageRoute(
-      builder: (context) => const FirstAidAllView(),
-    ),
-  );
-},
-                        child: Container(
-                          width: 170,
-                          height: 170,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: TColor.white,
-                            border: Border.all(
-                              width: 1,
-                              color: TColor.gray.withOpacity(0.5),
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            height: 170,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: TColor.white,
+                              border: Border.all(
+                                width: 1,
+                                color: TColor.gray.withOpacity(0.5),
+                              ),
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.medical_services,
-                                color: Colors.black,
-                                size: 50.0,
-                              ),
-                              const SizedBox(height: 10),
-                              Text(
-                                "First-Aid",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.medical_services,
                                   color: Colors.black,
+                                  size: 50.0,
                                 ),
-                              ),
-                            ],
+                                const SizedBox(height: 10),
+                                Text(
+                                  "First-Aid",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -193,88 +186,96 @@ class _DashboardViewState extends State<DashboardView> {
                       const SizedBox(width: 20),
 
                       // History Card
-                      GestureDetector(
-                        onTap: () {},
-                        child: Container(
-                          width: 170,
-                          height: 170,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: TColor.white,
-                            border: Border.all(
-                              width: 1,
-                              color: TColor.gray.withOpacity(0.5),
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HistoryView(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            height: 170,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: TColor.white,
+                              border: Border.all(
+                                width: 1,
+                                color: TColor.gray.withOpacity(0.5),
+                              ),
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.history,
-                                color: Colors.black,
-                                size: 50.0,
-                              ),
-                              const SizedBox(height: 10),
-                              Text(
-                                "History",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.history,
                                   color: Colors.black,
+                                  size: 50.0,
                                 ),
-                              ),
-                            ],
+                                const SizedBox(height: 10),
+                                Text(
+                                  "History",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ],
                   ),
 
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       // Emergency SOS Card
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const EmergencyView(),
-                            ),
-                          );
-                        },
-                        child: Container(
-                          width: 170,
-                          height: 170,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: TColor.white,
-                            border: Border.all(
-                              width: 1,
-                              color: TColor.gray.withOpacity(0.5),
-                            ),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.emergency,
-                                color: Colors.black,
-                                size: 50.0,
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const EmergencyView(),
                               ),
-                              const SizedBox(height: 10),
-                              Text(
-                                "Emergency SOS",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
+                            );
+                          },
+                          child: Container(
+                            height: 170,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: TColor.white,
+                              border: Border.all(
+                                width: 1,
+                                color: TColor.gray.withOpacity(0.5),
+                              ),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.emergency,
                                   color: Colors.black,
+                                  size: 50.0,
                                 ),
-                              ),
-                            ],
+                                const SizedBox(height: 10),
+                                Text(
+                                  "Emergency SOS",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -282,45 +283,39 @@ class _DashboardViewState extends State<DashboardView> {
                       const SizedBox(width: 20),
 
                       // Account Card
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => AccountPage(),
-                            ),
-                          );
-                        },
-                        child: Container(
-                          width: 170,
-                          height: 170,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: TColor.white,
-                            border: Border.all(
-                              width: 1,
-                              color: TColor.gray.withOpacity(0.5),
-                            ),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.person,
-                                color: Colors.black,
-                                size: 60.0,
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            height: 170,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: TColor.white,
+                              border: Border.all(
+                                width: 1,
+                                color: TColor.gray.withOpacity(0.5),
                               ),
-                              const SizedBox(height: 10),
-                              Text(
-                                "Account",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.person,
                                   color: Colors.black,
+                                  size: 60.0,
                                 ),
-                              ),
-                            ],
+                                const SizedBox(height: 10),
+                                Text(
+                                  "Account",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
