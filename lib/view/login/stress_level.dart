@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../common/colo_extension.dart';
+import 'first_aid_view.dart';
+import 'package:stress_predition_app/view/login/emergency_view.dart';
 
 class StressLevelView extends StatelessWidget {
   final String stressLevel;
@@ -17,18 +19,21 @@ class StressLevelView extends StatelessWidget {
       case 'severe':
         resultColor = Colors.redAccent;
         resultIcon = Icons.warning_amber_rounded;
-        recommendation = "High stress detected. Please take a break, try breathing exercises, or consider speaking to a professional.";
+        recommendation =
+            "High stress detected. Please take a break, try breathing exercises, or consider speaking to a professional.";
         break;
       case 'moderate':
         resultColor = Colors.orangeAccent;
         resultIcon = Icons.sentiment_neutral_rounded;
-        recommendation = "Moderate stress detected. Make sure to stay hydrated, stretch, and relax.";
+        recommendation =
+            "Moderate stress detected. Make sure to stay hydrated, stretch, and relax.";
         break;
       case 'mild':
       default:
         resultColor = Colors.green;
         resultIcon = Icons.sentiment_satisfied_alt_rounded;
-        recommendation = "Low stress detected. You're doing great! Keep up the good work.";
+        recommendation =
+            "Low stress detected. You're doing great! Keep up the good work.";
         break;
     }
 
@@ -43,7 +48,11 @@ class StressLevelView extends StatelessWidget {
         ),
         title: Text(
           "Stress Result",
-          style: TextStyle(color: TColor.gray, fontSize: 20, fontWeight: FontWeight.w700),
+          style: TextStyle(
+            color: TColor.gray,
+            fontSize: 20,
+            fontWeight: FontWeight.w700,
+          ),
         ),
         centerTitle: true,
       ),
@@ -76,7 +85,7 @@ class StressLevelView extends StatelessWidget {
                     color: Colors.black.withOpacity(0.05),
                     blurRadius: 15,
                     offset: const Offset(0, 10),
-                  )
+                  ),
                 ],
               ),
               child: Column(
@@ -97,11 +106,7 @@ class StressLevelView extends StatelessWidget {
                       color: resultColor.withOpacity(0.1),
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(
-                      resultIcon,
-                      color: resultColor,
-                      size: 70,
-                    ),
+                    child: Icon(resultIcon, color: resultColor, size: 70),
                   ),
                   const SizedBox(height: 20),
                   Text(
@@ -134,7 +139,14 @@ class StressLevelView extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   // Go back to dashboard or home, popping until first route
-                  Navigator.of(context).popUntil((route) => route.isFirst);
+                  //Redirect the done button to firstaid
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          FirstAidView(stressLevel: stressLevel),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xff334155),
@@ -145,10 +157,53 @@ class StressLevelView extends StatelessWidget {
                 ),
                 child: const Text(
                   "Done",
-                  style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
             ),
+
+            // 🚨 Emergency Button (ONLY for severe)
+            if (stressLevel.toLowerCase() == 'severe') ...[
+              const SizedBox(height: 20),
+
+              SizedBox(
+                width: 230,
+                height: 55,
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const EmergencyView(),
+                      ),
+                    );
+                  },
+                  icon: const Icon(
+                    Icons.warning_amber_rounded,
+                    color: Colors.white,
+                  ),
+                  label: const Text(
+                    "Emergency Help",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(
+                      0xff334155,
+                    ), // ✅ same as Done button
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ],
         ),
       ),
