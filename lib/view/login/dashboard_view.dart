@@ -1,11 +1,13 @@
 import 'package:stress_predition_app/common/colo_extension.dart';
 import 'package:stress_predition_app/common_widget/round_button.dart';
 import 'package:stress_predition_app/common_widget/round_textfield.dart';
+import 'package:stress_predition_app/view/login/first_aid_all_view.dart';
 import 'package:stress_predition_app/view/login/login_view.dart';
 import 'package:stress_predition_app/view/login/scan_face_view.dart';
 import 'package:flutter/material.dart';
 import 'package:stress_predition_app/view/login/emergency_view.dart';
 import 'package:stress_predition_app/view/login/history_view.dart';
+import 'package:stress_predition_app/view/login/account_view.dart';
 
 class DashboardView extends StatefulWidget {
   const DashboardView({super.key});
