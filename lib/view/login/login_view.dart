@@ -66,7 +66,6 @@ class _LoginViewState extends State<LoginView> {
         child: SingleChildScrollView(
           child: SafeArea(
             child: Container(
-              height: media.height,
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -144,7 +143,7 @@ class _LoginViewState extends State<LoginView> {
                     ],
                   ),
 
-                  const Spacer(),
+                  const SizedBox(height: 30),
                   RoundButton(
                     title: "Login",
                     onPressed: () {
@@ -261,28 +260,26 @@ class _LoginViewState extends State<LoginView> {
                         ),
                       );
                     },
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-
-                      children: [
-                        Text(
-                          "Don't have accout yet?",
-                          style: TextStyle(
-                            color: TColor.gray,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700,
-                          ),
+                    child: Text.rich(
+                      TextSpan(
+                        text: "Don't have accout yet?",
+                        style: TextStyle(
+                          color: TColor.gray,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
                         ),
-
-                        Text(
-                          " Register",
-                          style: TextStyle(
-                            color: TColor.black,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700,
+                        children: [
+                          TextSpan(
+                            text: " Register",
+                            style: TextStyle(
+                              color: TColor.black,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
 
